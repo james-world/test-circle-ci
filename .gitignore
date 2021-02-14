@@ -1,0 +1,6 @@
+﻿# Ignore build output
+bin
+obj
+
+# Ignore user files
+*.user
