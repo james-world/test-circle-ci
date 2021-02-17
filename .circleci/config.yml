@@ -10,4 +10,4 @@
      steps:
        - checkout
        - run: dotnet build
-       - run: dotnet test
+       - run: dotnet test --test-adapter-path:. --logger:junit
