@@ -10,4 +10,6 @@
      steps:
        - checkout
        - run: dotnet build
-       - run: dotnet test --test-adapter-path:. --logger:junit
+       - run: dotnet test --test-adapter-path:. --logger:"junit;LogFilePath=..\..\TestResults\{assembly}-Results.xml"
+       - store_test_results: 
+           path: TestResults

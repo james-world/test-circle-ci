@@ -4,4 +4,7 @@ obj
 
 # Ignore user files
 *.user
+
+# Ignore test result files
 TestResults.xml
+/TestResults/
