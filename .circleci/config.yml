@@ -1,14 +1,13 @@
  version: 2.1
 
- orbs:
-  win: circleci/windows@2.2.0
-
  jobs:
    build:
-     executor: win/default     
+     docker:
+       - image: mcr.microsoft.com/dotnet/sdk:5.0
     
      steps:
        - checkout
+       - run: dotnet restore
        - run: dotnet build
        - run: dotnet test --test-adapter-path:. --logger:"junit;LogFilePath=..\..\TestResults\{assembly}-Results.xml"
        - store_test_results: 
